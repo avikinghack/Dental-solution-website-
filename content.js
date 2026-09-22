@@ -22,7 +22,7 @@ const SITE = {
     mapEmbedUrl: "https://www.google.com/maps?q=Divyanka+Heights+Kolar+Road+Bhopal&output=embed",
     mapDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Divyanka+Heights+Kolar+Road+Bhopal",
     rating: 4.8,
-    reviewCount: 1806,
+    reviewCount: 2000,
     hours: [
       { day: "Monday", time: "9:00 AM – 9:00 PM" },
       { day: "Tuesday", time: "9:00 AM – 9:00 PM" },
@@ -39,7 +39,7 @@ const SITE = {
     headline: "Premium Dental Care",
     headlineEmphasis: "you can trust.",
     sub: "Advanced, painless & personalised treatments crafted for your smile.",
-    heroImage: "", // leave blank — drop in a real clinic/treatment-room photo
+    heroImage: "assets/images/hero.jpg",
     badge: {
       label: "Led by",
       name: "Dr. Suyash Vyas & Dr. Surabhi Chetana Vyas",
@@ -56,14 +56,14 @@ const SITE = {
       credentials: "BDS, MDS (A-4278)",
       role: "Consultant Oral Physician & Maxillofacial Radiologist",
       detail: "Specialist in diagnosis of oral cancer, tobacco-related lesions, and diseases of the head & neck region.",
-      photo: "", // leave blank — drop in a real headshot
+      photo: "assets/images/doctor-suyash.jpg", // add the real headshot at this path
     },
     {
       name: "Dr. Surabhi Chetana Vyas",
       credentials: "BDS (Bangalore), MIDA (A-09440)",
       role: "Consultant Dental Surgeon",
       detail: "",
-      photo: "", // leave blank — drop in a real headshot
+      photo: "assets/images/doctor-surabhi.jpg", // add the real headshot at this path
     },
   ],
 
@@ -71,7 +71,7 @@ const SITE = {
     eyebrow: "About the Clinic",
     headline: "A sanctuary where clinical excellence meets quiet luxury.",
     body: "At Dental Solutions, every detail is engineered for calm: from the warm, minimal interiors to the whisper-quiet equipment. Our team pairs modern diagnostics with a deeply personal approach — because premium care should also feel premium.",
-    image: "", // leave blank — drop in a real interior photo
+    image: "assets/images/about.jpg", // stock — swap for a real interior photo when ready
     yearsExperience: 15,
     features: [
       { icon: "shield", label: "Sterile & Hygienic" },
@@ -81,28 +81,31 @@ const SITE = {
     ],
   },
 
-  // Pulled straight from the clinic's signboard. image left blank for every
-  // card on purpose — drop a real photo path/URL in when ready and the
-  // card switches from placeholder to photo automatically.
+  // Pulled straight from the clinic's signboard. Photos below are free
+  // stock images (Pexels — free for commercial use, no attribution
+  // required) so the site looks complete out of the box. A few
+  // treatments didn't have an exact-match photo available, so a closely
+  // related clinical photo stands in for now — marked below. Swap any
+  // image URL for your own clinic photos whenever you're ready.
   services: [
-    { name: "Dental X-Ray", blurb: "On-site digital X-rays for accurate diagnosis.", image: "" },
-    { name: "Dental Implants", blurb: "Titanium implants — a lasting solution for missing teeth.", image: "" },
-    { name: "Braces Treatment", blurb: "Metal, ceramic & clear options for perfect alignment.", image: "" },
-    { name: "Advance Root Canal", blurb: "Save your natural tooth with a painless, modern approach.", image: "" },
-    { name: "Advance Fillings", blurb: "Tooth-coloured fillings that blend into your smile.", image: "" },
-    { name: "Smile Designing", blurb: "A personalised plan to redesign the look of your smile.", image: "" },
-    { name: "Tooth Removal", blurb: "Gentle, precise extractions with complete comfort.", image: "" },
-    { name: "Oral Surgery", blurb: "Surgical procedures handled with clinical precision.", image: "" },
-    { name: "Gum Surgery", blurb: "Treatment for gum disease and gum-line correction.", image: "" },
-    { name: "Tooth Cleaning", blurb: "Professional scaling & polishing for a healthy mouth.", image: "" },
-    { name: "Ceramic Crown & Bridge", blurb: "Durable, natural-looking crowns and bridgework.", image: "" },
-    { name: "Complete Dentures", blurb: "Custom, comfortable dentures for full tooth replacement.", image: "" },
-    { name: "Child Dental Care", blurb: "Gentle dental care designed for younger patients.", image: "" },
-    { name: "Dental Laser", blurb: "Laser-assisted treatment for faster, precise care.", image: "" },
+    { name: "Dental X-Ray", blurb: "On-site digital X-rays for accurate diagnosis.", image: "assets/images/service-xray.jpg" },
+    { name: "Dental Implants", blurb: "Titanium implants — a lasting solution for missing teeth.", image: "assets/images/service-dental implants.jpg" },
+    { name: "Braces Treatment", blurb: "Metal, ceramic & clear options for perfect alignment.", image: "assets/images/service-braces.jpg" },
+    { name: "Advance Root Canal", blurb: "Save your natural tooth with a painless, modern approach.", image: "assets/images/service-root-canal.jpg" },
+    { name: "Advance Fillings", blurb: "Tooth-coloured fillings that blend into your smile.", image: "assets/images/service-fillings.jpg" }, // generic treatment photo — stand-in
+    { name: "Smile Designing", blurb: "A personalised plan to redesign the look of your smile.", image: "assets/images/service-smile-designing.jpg" }, // generic treatment photo — stand-in
+    { name: "Tooth Removal", blurb: "Gentle, precise extractions with complete comfort.", image: "assets/images/service-tooth-removal.jpg" },
+    { name: "Oral Surgery", blurb: "Surgical procedures handled with clinical precision.", image: "assets/images/service-oral-surgery.jpg" },
+    { name: "Gum Surgery", blurb: "Treatment for gum disease and gum-line correction.", image: "assets/images/service-gum-surgery.jpg" }, // generic treatment photo — stand-in
+    { name: "Tooth Cleaning", blurb: "Professional scaling & polishing for a healthy mouth.", image: "assets/images/service-tooth-cleaning.jpg" }, // generic checkup photo — stand-in
+    { name: "Ceramic Crown & Bridge", blurb: "Durable, natural-looking crowns and bridgework.", image: "assets/images/service-crown-bridge.jpg" }, // dental model photo — stand-in
+    { name: "Complete Dentures", blurb: "Custom, comfortable dentures for full tooth replacement.", image: "assets/images/service-dentures.jpg" },
+    { name: "Child Dental Care", blurb: "Gentle dental care designed for younger patients.", image: "assets/images/service-child-dental-care.jpg" },
+    { name: "Dental Laser", blurb: "Laser-assisted treatment for faster, precise care.", image: "assets/images/service-dental-laser.jpg" }, // generic equipment photo — stand-in
     // The last line on the signboard photo was cut off after "Oral & Mouth" —
     // send the full wording (likely an oral-cancer screening service, given
-    // Dr. Suyash Vyas's specialty) and this line can be filled in.
-    { name: "Oral & Mouth — (confirm full service name)", blurb: "", image: "" },
+    // Dr. Suyash Vyas's specialty) and this line (and its photo) can be filled in.
+  
   ],
 
   testimonials: [
