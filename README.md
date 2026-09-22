@@ -1,70 +1,568 @@
-# Dental Solutions — website
+# Dental Solutions — Website
 
-Plain HTML/CSS/JS, no build step, no framework.
+**Live Website:** https://www.dentalsolutionsbhopal.com
 
-## Run it
+A professional dental clinic website for **Dental Solutions, Bhopal**, featuring clinic information, doctors, dental services, reviews, appointment enquiry, WhatsApp communication, and location/contact details.
 
-**Easiest:** in VS Code, install the "Live Server" extension, right-click
-`index.html` → **Open with Live Server**.
+The website is built using **plain HTML, CSS, and JavaScript** and is deployed as a production website on a **Windows hosting server through BigRock**.
 
-**Or:** just double-click `index.html` — it opens in your browser directly
-(map + WhatsApp links still work since they're just URLs).
+---
 
-**Or, from a terminal:**
+## 🌐 Live Website
+
+The production website is available at:
+
+**https://www.dentalsolutionsbhopal.com**
+
+The website is publicly accessible through the configured domain and hosting server.
+
+---
+
+## 🛠️ Technology Stack
+
+- **HTML5** — Website structure
+- **CSS3** — Styling, responsive design and layout
+- **JavaScript** — Dynamic content and interactions
+- **Google Fonts** — Typography
+- **WhatsApp Links** — Appointment and service enquiries
+- **Google Maps** — Clinic location
+- **Schema.org / JSON-LD** — Local SEO structured data
+- **BigRock** — Domain and web hosting
+- **Windows Server / IIS** — Web server environment
+
+No frontend framework or build system is required.
+
+---
+
+## 📁 Project Structure
+
+The deployed website follows a simple static website structure:
+
+```text
+dental-solutions/
+│
+├── index.html
+│
+├── css/
+│   └── styles.css
+│
+├── js/
+│   └── content.js
+│
+├── images/
+│   ├── hero/
+│   ├── doctors/
+│   ├── services/
+│   └── other/
+│
+└── README.md
 ```
-cd dental-solutions
-python3 -m http.server 5500
+
+The exact folders may vary depending on the final deployed assets, but **`index.html` remains the main entry point of the website**.
+
+---
+
+# 🚀 Deployment
+
+The website has been deployed to a **BigRock-hosted Windows server**.
+
+The production website is served through the configured domain:
+
+```text
+www.dentalsolutionsbhopal.com
 ```
-then open http://localhost:5500
 
-## Editing content
+The website files are uploaded to the hosting server's web root, allowing the server to serve `index.html` as the main website page.
 
-Everything text/image/phone/hours-related lives in **`js/content.js`** —
-that's the only file you should need to touch day-to-day. No HTML/CSS
-knowledge required to change a phone number, add a service, or edit a
-review.
+### Production flow
 
-## Swapping in real photos
+```text
+Local Website Files
+        │
+        ▼
+   BigRock Hosting
+        │
+        ▼
+ Windows Web Server
+        │
+        ▼
+ Domain Configuration
+        │
+        ▼
+www.dentalsolutionsbhopal.com
+        │
+        ▼
+    Live Website
+```
 
-Every image slot (hero, about, both doctor photos, all 15 service cards)
-is currently blank on purpose — it renders as a labeled placeholder box.
-Set the `image:` / `heroImage:` / `photo:` field in `js/content.js` to a
-hosted URL, or drop files into a local `/images` folder and reference
-them as `"images/hero.jpg"`, and the placeholder is replaced automatically.
+---
 
-## When location #2 opens (franchise-readiness)
+# 🔗 Domain
 
-`content.js` is intentionally structured as `SITE.location = {...}` (a
-single object) rather than scattering the clinic's name/phone/address
-across every HTML file. To add a second location later:
+The website is configured to use the following domain:
 
-1. Change `SITE.location` into `SITE.locations = [ {...bhopal}, {...newCity} ]`.
-2. Add a simple location switcher (dropdown or subdomain routing) that
-   picks which entry populates the page.
-3. Everything else — `hero`, `about`, `doctors`, `services`, `testimonials`
-   — can either stay shared across locations or also become arrays keyed
-   by location id, depending on whether services/pricing/doctors differ
-   by branch.
+```text
+www.dentalsolutionsbhopal.com
+```
 
-This avoids the trap of hardcoding "Bhopal" and one phone number into
-20 different places in the markup.
+The domain provides the public-facing address of the Dental Solutions website.
 
-## What's included
+---
 
-- Hero, About, **Meet the Doctors** (Dr. Suyash Vyas & Dr. Surabhi Chetana Vyas),
-  full 15-item Services grid, Why Us, Reviews, a **Book Appointment form**,
-  and Contact/map — all in one page.
-- Every image slot (hero, about, doctor photos, service cards) is left as a
-  labeled placeholder on purpose — see "Swapping in real photos" above.
+# 🔐 HTTPS / SSL
 
-## What this does *not* include
+The production website should be accessed using HTTPS:
 
-There's **no real booking backend or database** — the Book Appointment
-form on the page collects name, phone, service, preferred date/time, and
-notes, then builds a formatted message and opens WhatsApp with it
-pre-filled. The clinic still confirms manually over WhatsApp/call;
-nothing is stored server-side. Every service card's "Enquire on
-WhatsApp" button works the same way for a specific service. If you later
-want actual in-site appointment slots + automatic confirmations, that's
-a separate, bigger piece (calendar backend, WhatsApp Business API) —
-happy to help design that when you're ready.
+```text
+https://www.dentalsolutionsbhopal.com
+```
+
+HTTPS provides encrypted communication between the visitor's browser and the website server.
+
+If the domain or hosting configuration is changed in the future, verify that the SSL certificate remains active and that HTTP traffic redirects correctly to HTTPS.
+
+---
+
+# 📄 Main Website Features
+
+The live website includes:
+
+- Premium dental clinic landing page
+- Dental Solutions branding
+- Clinic information
+- Hero section
+- About section
+- Meet the Doctors section
+- Dr. Suyash Vyas
+- Dr. Surabhi Chetana Vyas
+- Dental services section
+- Why Choose Us section
+- Patient reviews/testimonials
+- Appointment enquiry form
+- WhatsApp appointment communication
+- Individual service WhatsApp enquiries
+- Clinic contact information
+- Google Maps/location section
+- Responsive mobile/tablet/desktop layout
+- Local SEO structured data
+
+---
+
+# 📞 Appointment System
+
+The website currently uses a **WhatsApp-based appointment enquiry system**.
+
+When a visitor submits the appointment form, the website prepares the submitted information and opens WhatsApp with a formatted message.
+
+Typical information includes:
+
+- Patient name
+- Phone number
+- Required service
+- Preferred date
+- Preferred time
+- Additional notes
+
+The clinic can then manually communicate with the patient and confirm the appointment.
+
+### Important
+
+The current website does **not** use a server-side appointment database.
+
+Appointment information is not permanently stored in the website's hosting database.
+
+---
+
+# 💬 WhatsApp Enquiries
+
+Service cards and appointment sections can redirect visitors to WhatsApp.
+
+This allows prospective patients to directly contact the clinic regarding:
+
+- Dental consultations
+- Root canal treatment
+- Dental implants
+- Braces
+- Cosmetic dentistry
+- Teeth whitening
+- Pediatric dentistry
+- Other available services
+
+---
+
+# 📍 Location & Google Maps
+
+The website includes the clinic's location information and map functionality so visitors can find the Dental Solutions clinic in Bhopal.
+
+The map/location section is intended to make navigation easier for patients visiting the clinic.
+
+---
+
+# ✏️ Editing Website Content
+
+Most frequently edited website information is maintained inside:
+
+```text
+js/content.js
+```
+
+This file can be used for routine content changes such as:
+
+- Clinic information
+- Phone number
+- Opening hours
+- Services
+- Doctor information
+- Reviews
+- Text content
+- WhatsApp information
+- Other configurable website content
+
+Whenever possible, update content through `content.js` instead of directly modifying the HTML.
+
+---
+
+# 🖼️ Updating Images
+
+Website images are stored in the appropriate image folders.
+
+For example:
+
+```text
+images/
+```
+
+or:
+
+```text
+images/doctors/
+images/services/
+images/hero/
+```
+
+To replace an image:
+
+1. Prepare the new image.
+2. Upload it to the appropriate server folder.
+3. Update its reference in the website configuration/content.
+4. Save the changes.
+5. Upload the modified files to the hosting server.
+6. Refresh the live website.
+
+Recommended image formats:
+
+```text
+.webp
+.jpg
+.jpeg
+.png
+```
+
+For large photographs, WebP is generally preferred for better website performance.
+
+---
+
+# 🔄 Updating the Live Website
+
+Because the website is hosted on a production server, changes should be made carefully.
+
+### Recommended workflow
+
+```text
+Edit locally
+     ↓
+Test locally
+     ↓
+Check desktop layout
+     ↓
+Check mobile layout
+     ↓
+Verify links/forms
+     ↓
+Upload changed files
+     ↓
+Refresh live website
+     ↓
+Verify production website
+```
+
+Do not directly experiment with important files on the production server without keeping a backup.
+
+---
+
+# 🧪 Testing Before Deployment
+
+Before uploading changes to the live server, verify:
+
+### Website
+
+- Home page loads correctly
+- Navigation works
+- Images load
+- CSS loads
+- JavaScript works
+- Mobile responsiveness works
+- Desktop layout works
+
+### Contact
+
+- Phone link works
+- WhatsApp links work
+- Appointment form works
+- Google Maps/location link works
+
+### Browser
+
+Test the website in commonly used browsers such as:
+
+- Google Chrome
+- Microsoft Edge
+- Firefox
+- Mobile Chrome
+- Mobile Safari where applicable
+
+---
+
+# 🔍 SEO
+
+The website contains basic SEO implementation including:
+
+- Page title
+- Meta description
+- Responsive viewport
+- Local business structured data
+- Dentist/clinic information
+- Bhopal location information
+- Clinic contact information
+
+The website also uses Schema.org structured data to help search engines understand that the website represents a dental clinic.
+
+---
+
+# ⚡ Performance
+
+The website is intentionally built without a frontend framework or heavy build system.
+
+Advantages include:
+
+- Simple deployment
+- Easy maintenance
+- Low hosting complexity
+- Fast initial loading
+- No Node.js production server required
+- No database required for the current functionality
+
+For future optimization, consider:
+
+- WebP image compression
+- Image lazy loading
+- Minification of CSS/JS
+- Browser caching
+- CDN integration
+- Performance monitoring
+
+---
+
+# 🖥️ Hosting Environment
+
+### Hosting Provider
+
+**BigRock**
+
+### Server Environment
+
+**Windows Server**
+
+### Website Type
+
+**Static HTML/CSS/JavaScript website**
+
+### Entry File
+
+```text
+index.html
+```
+
+### Production Domain
+
+```text
+www.dentalsolutionsbhopal.com
+```
+
+---
+
+# 🔧 Server Maintenance
+
+When updating the production website:
+
+1. Connect to the BigRock hosting/server environment.
+2. Locate the website's web root.
+3. Keep a backup of the current production files.
+4. Upload the updated website files.
+5. Ensure `index.html` is present in the correct web root.
+6. Verify CSS and JavaScript paths.
+7. Verify image paths.
+8. Open the live domain.
+9. Test the website on desktop and mobile.
+
+---
+
+# 🛡️ Backup Recommendation
+
+Before making major changes to the production website, create a backup of the current working version.
+
+Recommended backup structure:
+
+```text
+backups/
+│
+├── dental-solutions-working/
+├── dental-solutions-before-update/
+└── dental-solutions-production/
+```
+
+Keep at least one known-working copy of the website.
+
+---
+
+# 🚫 Current Limitations
+
+The current production website does **not** include:
+
+- Online appointment slot management
+- Patient database
+- Patient login
+- Doctor login
+- Admin dashboard
+- Online payment gateway
+- Automatic appointment confirmation
+- Server-side appointment storage
+- Hospital/clinic management system
+- Automated SMS system
+- WhatsApp Business API automation
+
+The current appointment workflow is based on **WhatsApp/manual confirmation**.
+
+---
+
+# 🔮 Future Improvements
+
+The website can later be expanded into a complete dental clinic management platform.
+
+Possible future features:
+
+### Appointment Management
+
+- Real-time appointment slots
+- Doctor availability
+- Online appointment booking
+- Automatic confirmation
+- Appointment reminders
+
+### Patient Management
+
+- Patient registration
+- Patient login
+- Digital patient records
+- Treatment history
+- Prescription management
+- Medical documents
+
+### Doctor Dashboard
+
+- Appointment calendar
+- Patient list
+- Treatment records
+- Follow-up management
+
+### Communication
+
+- WhatsApp Business API
+- SMS notifications
+- Email notifications
+- Appointment reminders
+
+### Payments
+
+- Online payment
+- Consultation fee payment
+- Digital invoices
+- Payment history
+
+---
+
+# 🌍 Production Website
+
+The project has moved from a **local development website** to a **publicly accessible production website**.
+
+### Development
+
+```text
+Local PC
+   ↓
+VS Code / Local Server
+   ↓
+Browser
+```
+
+### Production
+
+```text
+Visitor
+   ↓
+www.dentalsolutionsbhopal.com
+   ↓
+DNS / Domain
+   ↓
+BigRock Hosting
+   ↓
+Windows Web Server
+   ↓
+index.html
+   ↓
+Dental Solutions Website
+```
+
+---
+
+# 👨‍⚕️ Clinic
+
+**Dental Solutions Bhopal**
+
+**Doctors:**
+
+- Dr. Suyash Vyas — BDS, MDS
+- Dr. Surabhi Chetana Vyas — BDS, MDS
+
+**Location:**
+
+39, Shop No. 1 & 2, Ground Floor, Divyanka Heights, Mandakini Square, 80 Feet Rd, Kolar Rd, Bhopal, Madhya Pradesh — 462042, India.
+
+---
+
+# 📌 Project Status
+
+**Status:** ✅ Live / Production
+
+**Website:**  
+https://www.dentalsolutionsbhopal.com
+
+**Hosting:** BigRock
+
+**Server:** Windows Server
+
+**Technology:** HTML5 + CSS3 + JavaScript
+
+**Database:** Not required for the current website
+
+**Appointment System:** WhatsApp-based enquiry
+
+**Deployment:** Completed
+
+---
+
+## 📜 License / Usage
+
+This website has been developed specifically for **Dental Solutions, Bhopal**.
+
+Website content, branding, photographs, logos and clinic information should not be reused or redistributed without appropriate authorization.
